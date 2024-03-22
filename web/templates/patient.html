@@ -27,8 +27,8 @@
 <tbody>
     {% for patient in patientList %}
     <tr>
-        <td>{{patient['id']}}</td>
-        <td>{{patient['gender']}}</td>
+        <td>{{patient['Patient ID']}}</td>
+        <td>{{patient['Gender']}}</td>
         <td>
             <a class="link-dark" href="/dashboard/{{patient['id']}}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"

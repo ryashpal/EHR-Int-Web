@@ -19,8 +19,8 @@ def index():
 @app.route('/patient', methods = ['GET', 'POST'])
 def patient():
     if request.method == 'POST':
-        patientsList = [{"Patient ID": "001", "Gender": "Male"}, {"Patient ID": "002", "Gender": "Female"}]
-        return render_template('patient.html', the_title="EHR-ML: Patients", patients=patientsList)
+        patientList = [{"Patient ID": "001", "Gender": "Male"}, {"Patient ID": "002", "Gender": "Female"}]
+        return render_template('patient.html', the_title="EHR-ML: Patients", patientList=patientList)
     elif request.method == 'GET':
         return render_template('patient.html', the_title="EHR-ML: Patients")
 

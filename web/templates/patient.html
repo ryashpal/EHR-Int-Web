@@ -12,12 +12,37 @@
                 <div>
                     <label for="patient_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Patient ID</label>
                     <input type="text" name="patient_id" id="patient_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    <button type="submit" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Search</button>
                 </div>
             </div>
-            <button type="submit" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Search</button>
         </form>
     </div>
 </div>
 
+<table class="table table-bordered">
+<thead class="thead-dark">
+    <tr>
+        <th scope="col">Patient ID</th>
+        <th scope="col">Gender</th>
+    </tr>
+</thead>
+<tbody>
+    {% for patient in patientList %}
+    <tr>
+        <td>{{patient['id']}}</td>
+        <td>{{patient['gender']}}</td>
+        <td>
+            <a class="link-dark" href="/dashboard/{{patient['id']}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-cloud-download-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.5a.5.5 0 0 1 1 0V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0m-.354 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V11h-1v3.293l-2.146-2.147a.5.5 0 0 0-.708.708z" />
+                </svg>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
 
 {% endblock %}

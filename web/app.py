@@ -1,7 +1,5 @@
 from flask import Flask
 from flask import render_template
-from flask import request
-from flask import redirect
 
 import logging
 logging.basicConfig(filename='logs/flask.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')

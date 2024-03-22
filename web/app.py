@@ -15,9 +15,9 @@ def index():
     return render_template('index.html', the_title="EHR-ML")
 
 
-@app.route('/build', methods = ['GET', 'POST'])
-def build():
-    return render_template('patient.html', the_title="EHR-ML: Build")
+@app.route('/patient', methods = ['GET', 'POST'])
+def patient():
+    return render_template('patient.html', the_title="EHR-ML: Patients")
 
 
 if __name__ == "__main__":

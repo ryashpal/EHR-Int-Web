@@ -1,7 +1,8 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-from flask import redirect
+
+from SearchPatientUsecase import searchPatient
 
 
 import logging
@@ -19,7 +20,7 @@ def index():
 @app.route('/patient', methods = ['GET', 'POST'])
 def patient():
     if request.method == 'POST':
-        patientList = [{"Patient ID": "001", "Gender": "Male"}, {"Patient ID": "002", "Gender": "Female"}]
+        patientList = searchPatient(patientId=request.form.get('patient_id'))
         return render_template('patient.html', the_title="EHR-ML: Patients", patientList=patientList)
     elif request.method == 'GET':
         return render_template('patient.html', the_title="EHR-ML: Patients")

@@ -1,8 +1,5 @@
-import shutil
-
 from flask import Flask
 from flask import render_template
-from flask import send_from_directory
 from flask import request
 from flask import redirect
 
@@ -16,6 +13,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html', the_title="EHR-ML")
+
+
+@app.route('/build', methods = ['GET', 'POST'])
+def build():
+    return render_template('patient.html', the_title="EHR-ML: Build")
 
 
 if __name__ == "__main__":
